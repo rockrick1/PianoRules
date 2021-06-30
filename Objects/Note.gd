@@ -1,11 +1,13 @@
 extends Node2D
 
-const REGULAR = 1
-const SHARP = 1
-const FLAT = 2
+const accidentals = {
+	"regular" : 0,
+	"sharp" : 1,
+	"flat" : 2,
+}
 
 var type : String = "semibreve"
-var accidental : int = REGULAR
+var accidental : int = 0
 
 
 func _ready():
@@ -13,16 +15,20 @@ func _ready():
 
 
 func sharp():
-	accidental = SHARP
+	accidental = accidentals["sharp"]
 	$FlatSprite.set_visible(false)
 	$SharpSprite.set_visible(true)
 
 func flat():
-	accidental = FLAT
+	accidental = accidentals["flat"]
 	$FlatSprite.set_visible(true)
 	$SharpSprite.set_visible(false)
 
 func regular():
-	accidental = REGULAR
+	accidental = accidentals["regular"]
 	$FlatSprite.set_visible(false)
 	$SharpSprite.set_visible(false)
+
+
+func get_accidentals():
+	return accidentals
