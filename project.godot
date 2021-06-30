@@ -14,8 +14,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="midi-input-example"
-run/main_scene="res://Root.tscn"
+config/name="PianoRules"
+run/main_scene="res://Screens/Root.tscn"
 config/icon="res://icon.png"
 
 [rendering]

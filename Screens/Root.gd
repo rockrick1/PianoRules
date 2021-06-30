@@ -65,7 +65,6 @@ func _unhandled_input(event : InputEvent):
 
 		match event.message:
 			MIDI_MESSAGE_NOTE_ON:
-				print(props)
 				$"Control/VBoxContainer/Container/VBoxContainer/RichTextLabel".add_text(event_dump)
 				print(played_note)
 				var current_key_node : CSGPrimitive = get_node("3DRoot/Octave/" + OCTAVE_KEY_INDEX[key_index])
