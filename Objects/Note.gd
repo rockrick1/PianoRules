@@ -8,6 +8,8 @@ const accidentals = {
 
 var type : String = "semibreve"
 var accidental : int = 0
+var pitch : int
+var note_str : String
 
 
 func _ready():

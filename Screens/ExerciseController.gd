@@ -4,15 +4,28 @@ onready var NoteMapping = load("res://Scripts/NoteMapping.gd")
 onready var BaseExercise = load("res://Exercises/Exercise.gd")
 onready var Note = load("res://Objects/Note.tscn")
 
+onready var InputReader : Node
+onready var NoteGroup : Node
+
 var tone_offset : float
 
 var current_ex
 
 func _ready():
+	# generate a new random seed
+	randomize()
+	InputReader = $InputReader
+	NoteGroup = $VSplitContainer/TextureRect/Notes
 	tone_offset = $VSplitContainer/TextureRect/Anchor77.position.y - $VSplitContainer/TextureRect/Anchor60.position.y
 	tone_offset /= 10
 	print(tone_offset)
 	load_exercise("RandomNote")
+
+func _process(_delta):
+	for pitch in get_just_pressed_keys():
+		for note in NoteGroup.get_children():
+			if note.pitch == pitch:
+				current_ex.next_step()
 
 func load_exercise(ex_name):
 	print("loading exercise " + ex_name)
@@ -37,6 +50,8 @@ func add_note(pitch):
 	var note = Note.instance()
 	var note_str = NoteMapping.get_map()[pitch]
 	note.position = get_note_position_by_name(note_str)
+	note.pitch = pitch
+	note.note_str = note_str
 	var full_note = note_str.substr(1)
 	if "#" in full_note:
 		note.sharp()
@@ -44,15 +59,26 @@ func add_note(pitch):
 	print("add note in pitch "+str(pitch))
 
 func kill_all_notes():
-	for note in $VSplitContainer/TextureRect/Notes.get_children():
+	for note in NoteGroup.get_children():
 		note.queue_free()
 
-func exercise_next_step():
-	pass
+func get_pressed_keys():
+	return InputReader.currently_pressed.keys()
 
-func read_input(input):
-	pass
+func get_just_pressed_keys():
+	return InputReader.just_pressed.keys()
 
+func get_just_released_keys():
+	return InputReader.just_released.keys()
+
+func is_key_pressed(pitch):
+	return InputReader.currently_pressed.has(pitch)
+
+func is_key_just_pressed(pitch):
+	return InputReader.just_pressed.has(pitch)
+
+func is_key_just_released(pitch):
+	return InputReader.just_released.has(pitch)
 
 func _on_Button_pressed():
 	current_ex.next_step()
