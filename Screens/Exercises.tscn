@@ -22,18 +22,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VSplitContainer" type="VSplitContainer" parent="."]
+[node name="VSplitContainer" type="VBoxContainer" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
-dragger_visibility = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VSplitContainer"]
 margin_right = 1024.0
-margin_bottom = 51.0
-size_flags_vertical = 3
+margin_bottom = 14.0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.98
 text = "Play some notes!"
 align = 1
 valign = 1
@@ -41,12 +41,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="VSplitContainer"]
-margin_top = 63.0
+[node name="NextStep" type="Button" parent="VSplitContainer"]
+margin_top = 18.0
+margin_right = 132.0
+margin_bottom = 38.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Next exercise step"
+
+[node name="Configs" type="Button" parent="VSplitContainer"]
+margin_top = 42.0
+margin_right = 63.0
+margin_bottom = 62.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.35
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsPanel" type="PopupMenu" parent="VSplitContainer"]
+margin_top = 66.0
+margin_right = 20.0
+margin_bottom = 86.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+hide_on_item_selection = false
+hide_on_checkable_item_selection = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer"]
+margin_top = 66.0
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 17.56
+custom_constants/margin_top = 0
+
+[node name="TextureRect" type="TextureRect" parent="VSplitContainer/MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 420.0
+size_flags_vertical = 0
 size_flags_stretch_ratio = 9.39
 texture = ExtResource( 1 )
 stretch_mode = 4
@@ -54,20 +93,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Anchor77" type="Node2D" parent="VSplitContainer/TextureRect"]
-position = Vector2( 505.906, 170.992 )
+[node name="Anchor77" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
+position = Vector2( 508.703, 112.506 )
 
-[node name="Anchor60" type="Node2D" parent="VSplitContainer/TextureRect"]
-position = Vector2( 505.906, 270.979 )
+[node name="Anchor60" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
+position = Vector2( 508.703, 212.493 )
 
-[node name="Anchor43" type="Node2D" parent="VSplitContainer/TextureRect"]
-position = Vector2( 505.906, 370.987 )
+[node name="Anchor43" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
+position = Vector2( 508.703, 312.501 )
 
-[node name="Notes" type="Node2D" parent="VSplitContainer/TextureRect"]
+[node name="Notes" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
 
-[node name="Button" type="Button" parent="VSplitContainer"]
-margin_right = 12.0
-margin_bottom = 20.0
-text = "Next exercise step"
-
-[connection signal="pressed" from="VSplitContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VSplitContainer/NextStep" to="." method="_on_NextStep_pressed"]
+[connection signal="pressed" from="VSplitContainer/Configs" to="." method="_on_Configs_pressed"]

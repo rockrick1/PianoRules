@@ -6,6 +6,7 @@ onready var Note = load("res://Objects/Note.tscn")
 
 onready var InputReader : Node
 onready var NoteGroup : Node
+onready var OptionsPanel : Node
 
 var tone_offset : float
 
@@ -15,17 +16,24 @@ func _ready():
 	# generate a new random seed
 	randomize()
 	InputReader = $InputReader
-	NoteGroup = $VSplitContainer/TextureRect/Notes
-	tone_offset = $VSplitContainer/TextureRect/Anchor77.position.y - $VSplitContainer/TextureRect/Anchor60.position.y
+	NoteGroup = $VSplitContainer/MarginContainer/TextureRect/Notes
+	OptionsPanel = $VSplitContainer/OptionsPanel
+	tone_offset = $VSplitContainer/MarginContainer/TextureRect/Anchor77.position.y - $VSplitContainer/MarginContainer/TextureRect/Anchor60.position.y
 	tone_offset /= 10
 	print(tone_offset)
+	_add_config_options()
 	load_exercise("RandomNote")
 
 func _process(_delta):
-	for pitch in get_just_pressed_keys():
-		for note in NoteGroup.get_children():
+	for note in NoteGroup.get_children():
+		for pitch in get_just_pressed_keys():
+			# hit!
 			if note.pitch == pitch:
+				print("you got it bro!")
 				current_ex.next_step()
+			else:
+				print("man, u suck...")
+				break
 
 func load_exercise(ex_name):
 	print("loading exercise " + ex_name)
@@ -42,7 +50,7 @@ func get_note_position_by_name(note_str) -> Vector2:
 	var octave_offset = tone_offset * 7
 	
 	var dist = (note_offset * tone_offset) + ((octave - 6) * octave_offset)
-	var pos = $VSplitContainer/TextureRect/Anchor60.position + Vector2((note_offset % 2) * -50, dist)
+	var pos = $VSplitContainer/MarginContainer/TextureRect/Anchor60.position + Vector2((note_offset % 2) * -50, dist)
 	return pos
 
 func add_note(pitch):
@@ -55,7 +63,7 @@ func add_note(pitch):
 	var full_note = note_str.substr(1)
 	if "#" in full_note:
 		note.sharp()
-	$VSplitContainer/TextureRect/Notes.add_child(note)
+	$VSplitContainer/MarginContainer/TextureRect/Notes.add_child(note)
 	print("add note in pitch "+str(pitch))
 
 func kill_all_notes():
@@ -80,5 +88,14 @@ func is_key_just_pressed(pitch):
 func is_key_just_released(pitch):
 	return InputReader.just_released.has(pitch)
 
-func _on_Button_pressed():
+
+func _on_NextStep_pressed():
 	current_ex.next_step()
+
+
+func _on_Configs_pressed():
+	OptionsPanel.visible = not OptionsPanel.visible
+#	$OptionsPanel.popup()
+
+func _add_config_options():
+	OptionsPanel.add_check_item("Assist mode")
