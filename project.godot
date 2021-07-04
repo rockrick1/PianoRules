@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PianoRules"
-run/main_scene="res://Screens/Root.tscn"
+run/main_scene="res://Screens/Exercises.tscn"
 config/icon="res://icon.png"
 
 [rendering]

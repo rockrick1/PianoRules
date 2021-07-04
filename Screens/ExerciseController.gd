@@ -50,7 +50,7 @@ func get_note_position_by_name(note_str) -> Vector2:
 	var octave_offset = tone_offset * 7
 	
 	var dist = (note_offset * tone_offset) + ((octave - 6) * octave_offset)
-	var pos = $VSplitContainer/MarginContainer/TextureRect/Anchor60.position + Vector2((note_offset % 2) * -50, dist)
+	var pos = $VSplitContainer/MarginContainer/TextureRect/Anchor60.position + Vector2(((note_offset + octave) % 2) * -50, dist)
 	return pos
 
 func add_note(pitch):
