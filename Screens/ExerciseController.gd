@@ -8,8 +8,10 @@ onready var InputReader : Node
 onready var NoteGroup : Node
 onready var OptionsPanel : Node
 onready var Assist : Node
+onready var HardAssist : Node
 
 var assist_mode : bool = false
+var hard_assist_mode : bool = false
 
 var tone_offset : float
 
@@ -28,9 +30,11 @@ func _ready():
 	# options panel, with many settings
 	OptionsPanel = $VSplitContainer/OptionsPanel
 	
-	# Assist node
+	# Assist nodes
 	Assist = $VSplitContainer/MarginContainer/TextureRect/Assist
+	HardAssist = $VSplitContainer/MarginContainer/TextureRect/HardAssist
 	Assist.visible = false
+	HardAssist.visible = false
 	
 	tone_offset = $VSplitContainer/MarginContainer/TextureRect/Anchor77.position.y - $VSplitContainer/MarginContainer/TextureRect/Anchor60.position.y
 	tone_offset /= 10
@@ -118,12 +122,30 @@ func _on_Configs_pressed():
 # Options panel functions #
 
 func _add_config_options():
-	OptionsPanel.add_check_item("Assist mode", 1)
+	OptionsPanel.add_radio_check_item("Assist mode", 1)
+	OptionsPanel.add_radio_check_item("Hard assist mode", 2)
+	OptionsPanel.add_separator("", 3)
+	OptionsPanel.add_item("Quit", 100)
 
 func _on_OptionsPanel_id_pressed(id):
 	var idx = OptionsPanel.get_item_index(id)
 	match id:
 		1:
 			assist_mode = not assist_mode
+			hard_assist_mode = false
 			Assist.visible = assist_mode
+			HardAssist.visible = hard_assist_mode
+			var hard_assist_idx = OptionsPanel.get_item_index(2)
 			OptionsPanel.set_item_checked(idx, assist_mode)
+			OptionsPanel.set_item_checked(hard_assist_idx, hard_assist_mode)
+		2:
+			hard_assist_mode = not hard_assist_mode
+			assist_mode = false
+			Assist.visible = assist_mode
+			HardAssist.visible = hard_assist_mode
+			var assist_idx = OptionsPanel.get_item_index(1)
+			OptionsPanel.set_item_checked(idx, hard_assist_mode)
+			OptionsPanel.set_item_checked(assist_idx, assist_mode)
+		
+		100:
+			get_tree().quit()

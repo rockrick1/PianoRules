@@ -112,13 +112,25 @@ position = Vector2( 508.703, 312.501 )
 [node name="Notes" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
 
 [node name="Assist" type="Label" parent="VSplitContainer/MarginContainer/TextureRect"]
-visible = false
 margin_left = 544.0
 margin_top = 192.0
 margin_right = 584.0
 margin_bottom = 232.0
 custom_styles/normal = SubResource( 1 )
 text = "oi eu sou um assist!!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HardAssist" type="Label" parent="VSplitContainer/MarginContainer/TextureRect"]
+margin_left = 568.0
+margin_top = 241.0
+margin_right = 717.0
+margin_bottom = 281.0
+custom_styles/normal = SubResource( 1 )
+text = "oi eu sou HARD assist!!"
 align = 1
 valign = 1
 __meta__ = {
