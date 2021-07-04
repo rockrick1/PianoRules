@@ -7,6 +7,9 @@ onready var Note = load("res://Objects/Note.tscn")
 onready var InputReader : Node
 onready var NoteGroup : Node
 onready var OptionsPanel : Node
+onready var Assist : Node
+
+var assist_mode : bool = false
 
 var tone_offset : float
 
@@ -18,6 +21,7 @@ func _ready():
 	InputReader = $InputReader
 	NoteGroup = $VSplitContainer/MarginContainer/TextureRect/Notes
 	OptionsPanel = $VSplitContainer/OptionsPanel
+	Assist = $VSplitContainer/MarginContainer/TextureRect/Assist
 	tone_offset = $VSplitContainer/MarginContainer/TextureRect/Anchor77.position.y - $VSplitContainer/MarginContainer/TextureRect/Anchor60.position.y
 	tone_offset /= 10
 	print(tone_offset)
@@ -98,4 +102,13 @@ func _on_Configs_pressed():
 #	$OptionsPanel.popup()
 
 func _add_config_options():
-	OptionsPanel.add_check_item("Assist mode")
+	OptionsPanel.add_check_item("Assist mode", 1)
+
+func _on_OptionsPanel_id_pressed(id):
+	var idx = OptionsPanel.get_item_index(id)
+	match id:
+		1:
+			assist_mode = not assist_mode
+			Assist.visible = assist_mode
+			OptionsPanel.set_item_checked(idx, assist_mode)
+			
