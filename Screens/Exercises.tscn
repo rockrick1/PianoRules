@@ -1,8 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/cleff.png" type="Texture" id=1]
 [ext_resource path="res://Screens/ExerciseController.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/InputReader.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Fonts/Rubik-VariableFont_wght.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Fonts/Simple.tres" type="DynamicFont" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+outline_color = Color( 1, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.027451, 0.796078, 1, 1 )
@@ -100,6 +107,121 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Assist" type="Control" parent="VSplitContainer/MarginContainer/TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+margin_left = 767.924
+margin_top = 133.0
+margin_right = 828.924
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
+text = "C "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+margin_left = 767.924
+margin_top = 273.0
+margin_right = 828.924
+margin_bottom = 292.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
+text = "C "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+margin_left = 767.924
+margin_top = 312.0
+margin_right = 828.924
+margin_bottom = 331.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
+text = "F"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+margin_left = 767.924
+margin_top = 95.0
+margin_right = 828.924
+margin_bottom = 114.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
+text = "G"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+margin_left = 791.284
+margin_top = 162.7
+margin_right = 852.284
+margin_bottom = 181.7
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
+text = "G"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+margin_left = 543.284
+margin_top = 62.7002
+margin_right = 604.284
+margin_bottom = 81.7002
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
+text = "C"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label10" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+margin_left = 543.284
+margin_top = 202.7
+margin_right = 604.284
+margin_bottom = 221.7
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
+text = "C"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+margin_left = 543.284
+margin_top = 322.7
+margin_right = 604.284
+margin_bottom = 341.7
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
+text = "C"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+margin_left = 790.617
+margin_top = 242.744
+margin_right = 851.617
+margin_bottom = 261.744
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
+text = "F"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Anchor77" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
 position = Vector2( 508.703, 112.506 )
 
@@ -111,25 +233,13 @@ position = Vector2( 508.703, 312.501 )
 
 [node name="Notes" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
 
-[node name="Assist" type="Label" parent="VSplitContainer/MarginContainer/TextureRect"]
-margin_left = 544.0
-margin_top = 192.0
-margin_right = 584.0
-margin_bottom = 232.0
-custom_styles/normal = SubResource( 1 )
-text = "oi eu sou um assist!!"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="HardAssist" type="Label" parent="VSplitContainer/MarginContainer/TextureRect"]
 margin_left = 568.0
 margin_top = 241.0
 margin_right = 717.0
 margin_bottom = 281.0
 custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 5 )
 text = "oi eu sou HARD assist!!"
 align = 1
 valign = 1
