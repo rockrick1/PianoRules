@@ -25,18 +25,18 @@ func _ready():
 	InputReader = $InputReader
 	
 	# parent node for all the notes on screen
-	NoteGroup = $VSplitContainer/MarginContainer/TextureRect/Notes
+	NoteGroup = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Notes
 	
 	# options panel, with many settings
-	OptionsPanel = $VSplitContainer/OptionsPanel
+	OptionsPanel = $MarginContainer/VSplitContainer/OptionsPanel
 	
 	# Assist nodes
-	Assist = $VSplitContainer/MarginContainer/TextureRect/Assist
-	HardAssist = $VSplitContainer/MarginContainer/TextureRect/HardAssist
+	Assist = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist
+	HardAssist = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist
 	Assist.visible = false
 	HardAssist.visible = false
 	
-	tone_offset = $VSplitContainer/MarginContainer/TextureRect/Anchor77.position.y - $VSplitContainer/MarginContainer/TextureRect/Anchor60.position.y
+	tone_offset = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Anchor77.position.y - $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Anchor60.position.y
 	tone_offset /= 10
 	
 	print(tone_offset)
@@ -68,7 +68,7 @@ func get_note_position_by_name(note_str) -> Vector2:
 	var note_offset = NoteMapping.get_offsets()[note]
 	var octave_offset = tone_offset * 7
 	var dist = (note_offset * tone_offset) + ((octave - 6) * octave_offset)
-	var pos = $VSplitContainer/MarginContainer/TextureRect/Anchor60.position + Vector2(((note_offset + octave) % 2) * -50, dist)
+	var pos = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Anchor60.position + Vector2(((note_offset + octave) % 2) * -50, dist)
 	return pos
 
 func add_note(pitch):
@@ -83,7 +83,7 @@ func add_note(pitch):
 		note.sharp()
 	elif "b" in full_note:
 		note.flat()
-	$VSplitContainer/MarginContainer/TextureRect/Notes.add_child(note)
+	$MarginContainer/VSplitContainer/MarginContainer/TextureRect/Notes.add_child(note)
 	print("add note in pitch "+str(pitch))
 
 # murders all notes on screen

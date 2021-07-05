@@ -28,15 +28,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VSplitContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 580.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Label" type="Label" parent="VSplitContainer"]
-margin_right = 1024.0
+[node name="Label" type="Label" parent="MarginContainer/VSplitContainer"]
+margin_right = 984.0
 margin_bottom = 14.0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.98
@@ -47,7 +60,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextStep" type="Button" parent="VSplitContainer"]
+[node name="NextStep" type="Button" parent="MarginContainer/VSplitContainer"]
 margin_top = 18.0
 margin_right = 132.0
 margin_bottom = 38.0
@@ -55,7 +68,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Next exercise step"
 
-[node name="Configs" type="Button" parent="VSplitContainer"]
+[node name="Configs" type="Button" parent="MarginContainer/VSplitContainer"]
 margin_top = 42.0
 margin_right = 63.0
 margin_bottom = 62.0
@@ -67,7 +80,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionsPanel" type="PopupMenu" parent="VSplitContainer"]
+[node name="OptionsPanel" type="PopupMenu" parent="MarginContainer/VSplitContainer"]
 margin_top = 66.0
 margin_right = 20.0
 margin_bottom = 86.0
@@ -79,17 +92,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VSplitContainer"]
 margin_top = 66.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 984.0
+margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 17.56
 custom_constants/margin_top = 0
 
-[node name="TextureRect" type="TextureRect" parent="VSplitContainer/MarginContainer"]
-margin_right = 1024.0
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VSplitContainer/MarginContainer"]
+margin_right = 984.0
 margin_bottom = 420.0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 9.39
@@ -99,7 +112,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Assist" type="Control" parent="VSplitContainer/MarginContainer/TextureRect"]
+[node name="Assist" type="Control" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -107,7 +120,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist"]
 margin_left = 576.663
 margin_top = 85.6071
 margin_right = 798.663
@@ -116,7 +129,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+[node name="Label" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist"]
 margin_left = 559.868
 margin_top = 133.0
 margin_right = 620.868
@@ -128,7 +141,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label7" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+[node name="Label7" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist"]
 margin_left = 558.924
 margin_top = 273.0
 margin_right = 619.924
@@ -140,7 +153,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label8" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+[node name="Label8" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist"]
 margin_left = 558.924
 margin_top = 312.0
 margin_right = 619.924
@@ -152,7 +165,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+[node name="Label4" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist"]
 margin_left = 559.868
 margin_top = 95.0
 margin_right = 620.868
@@ -164,7 +177,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+[node name="Label2" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist"]
 margin_left = 583.228
 margin_top = 162.7
 margin_right = 644.228
@@ -176,7 +189,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+[node name="Label5" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist"]
 margin_left = 543.284
 margin_top = 62.7002
 margin_right = 604.284
@@ -188,7 +201,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label10" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+[node name="Label10" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist"]
 margin_left = 543.284
 margin_top = 202.7
 margin_right = 604.284
@@ -200,7 +213,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label6" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/Assist"]
+[node name="Label6" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist"]
 margin_left = 582.561
 margin_top = 242.744
 margin_right = 643.561
@@ -212,7 +225,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HardAssist" type="Control" parent="VSplitContainer/MarginContainer/TextureRect"]
+[node name="HardAssist" type="Control" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -220,7 +233,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 576.663
 margin_top = 85.6071
 margin_right = 798.663
@@ -229,7 +242,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
 margin_top = 132.37
 margin_right = 620.868
@@ -241,7 +254,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label7" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label7" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 558.924
 margin_top = 273.0
 margin_right = 619.924
@@ -253,7 +266,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label8" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label8" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 558.924
 margin_top = 312.0
 margin_right = 619.924
@@ -265,7 +278,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label4" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
 margin_top = 95.0
 margin_right = 620.868
@@ -277,7 +290,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label18" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label18" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
 margin_top = 113.0
 margin_right = 620.868
@@ -289,7 +302,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label19" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label19" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
 margin_top = 153.0
 margin_right = 620.868
@@ -301,7 +314,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label20" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label20" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
 margin_top = 173.0
 margin_right = 620.868
@@ -313,7 +326,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label21" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label21" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
 margin_top = 193.0
 margin_right = 620.868
@@ -325,7 +338,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label22" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label22" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
 margin_top = 213.0
 margin_right = 620.868
@@ -337,7 +350,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label23" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label23" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
 margin_top = 233.0
 margin_right = 620.868
@@ -349,7 +362,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label24" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label24" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
 margin_top = 253.0
 margin_right = 620.868
@@ -361,7 +374,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label25" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label25" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.238
 margin_top = 293.0
 margin_right = 620.238
@@ -373,7 +386,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label2" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 583.228
 margin_top = 162.7
 margin_right = 644.228
@@ -385,7 +398,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label3" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 583.228
 margin_top = 142.7
 margin_right = 644.228
@@ -397,7 +410,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label11" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label11" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 583.228
 margin_top = 123.7
 margin_right = 644.228
@@ -409,7 +422,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label12" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label12" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 582.598
 margin_top = 103.7
 margin_right = 643.598
@@ -421,7 +434,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label13" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label13" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 583.228
 margin_top = 183.7
 margin_right = 644.228
@@ -433,7 +446,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label14" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label14" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 583.228
 margin_top = 222.7
 margin_right = 644.228
@@ -445,7 +458,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label15" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label15" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 583.228
 margin_top = 262.07
 margin_right = 644.228
@@ -457,7 +470,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label16" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label16" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 583.228
 margin_top = 282.7
 margin_right = 644.228
@@ -469,7 +482,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label17" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label17" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 583.228
 margin_top = 302.7
 margin_right = 644.228
@@ -481,7 +494,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label5" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 543.284
 margin_top = 62.7002
 margin_right = 604.284
@@ -493,7 +506,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label10" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label10" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 543.284
 margin_top = 202.7
 margin_right = 604.284
@@ -505,7 +518,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label9" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label9" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 543.284
 margin_top = 322.7
 margin_right = 604.284
@@ -517,7 +530,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label6" type="Label" parent="VSplitContainer/MarginContainer/TextureRect/HardAssist"]
+[node name="Label6" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 582.561
 margin_top = 242.744
 margin_right = 643.561
@@ -529,17 +542,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Anchor77" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
+[node name="Anchor77" type="Node2D" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
 position = Vector2( 508.703, 112.506 )
 
-[node name="Anchor60" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
+[node name="Anchor60" type="Node2D" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
 position = Vector2( 508.703, 212.493 )
 
-[node name="Anchor43" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
+[node name="Anchor43" type="Node2D" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
 position = Vector2( 508.703, 312.501 )
 
-[node name="Notes" type="Node2D" parent="VSplitContainer/MarginContainer/TextureRect"]
+[node name="Notes" type="Node2D" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
 
-[connection signal="pressed" from="VSplitContainer/NextStep" to="." method="_on_NextStep_pressed"]
-[connection signal="pressed" from="VSplitContainer/Configs" to="." method="_on_Configs_pressed"]
-[connection signal="id_pressed" from="VSplitContainer/OptionsPanel" to="." method="_on_OptionsPanel_id_pressed"]
+[connection signal="pressed" from="MarginContainer/VSplitContainer/NextStep" to="." method="_on_NextStep_pressed"]
+[connection signal="pressed" from="MarginContainer/VSplitContainer/Configs" to="." method="_on_Configs_pressed"]
+[connection signal="id_pressed" from="MarginContainer/VSplitContainer/OptionsPanel" to="." method="_on_OptionsPanel_id_pressed"]
