@@ -543,13 +543,13 @@ __meta__ = {
 }
 
 [node name="Anchor77" type="Node2D" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
-position = Vector2( 508.703, 112.506 )
+position = Vector2( 488.703, 112.506 )
 
 [node name="Anchor60" type="Node2D" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
-position = Vector2( 508.703, 212.493 )
+position = Vector2( 488.703, 212.493 )
 
 [node name="Anchor43" type="Node2D" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
-position = Vector2( 508.703, 312.501 )
+position = Vector2( 488.703, 312.501 )
 
 [node name="Notes" type="Node2D" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
 
