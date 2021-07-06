@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/OptionsPanel.gd" type="Script" id=1]
+
+[node name="OptionsPanel" type="PopupMenu"]
+margin_top = 66.0
+margin_right = 20.0
+margin_bottom = 86.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+hide_on_item_selection = false
+hide_on_checkable_item_selection = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="id_pressed" from="." to="." method="_on_OptionsPanel_id_pressed"]

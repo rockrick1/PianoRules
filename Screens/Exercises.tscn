@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/cleff.png" type="Texture" id=1]
 [ext_resource path="res://Screens/ExerciseController.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/InputReader.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Fonts/Rubik-VariableFont_wght.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://UI/OptionsPanel.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 1, 0, 0, 1 )
@@ -80,17 +81,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionsPanel" type="PopupMenu" parent="MarginContainer/VSplitContainer"]
-margin_top = 66.0
-margin_right = 20.0
-margin_bottom = 86.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-hide_on_item_selection = false
-hide_on_checkable_item_selection = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="OptionsPanel" parent="MarginContainer/VSplitContainer" instance=ExtResource( 5 )]
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VSplitContainer"]
 margin_top = 66.0
@@ -226,7 +217,6 @@ __meta__ = {
 }
 
 [node name="HardAssist" type="Control" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -244,9 +234,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist"]
 margin_left = 559.868
-margin_top = 132.37
+margin_top = 133.37
 margin_right = 620.868
-margin_bottom = 151.37
+margin_bottom = 152.37
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.117647, 0, 1 )
 text = "C "
@@ -555,4 +545,3 @@ position = Vector2( 503.703, 312.501 )
 
 [connection signal="pressed" from="MarginContainer/VSplitContainer/NextStep" to="." method="_on_NextStep_pressed"]
 [connection signal="pressed" from="MarginContainer/VSplitContainer/Configs" to="." method="_on_Configs_pressed"]
-[connection signal="id_pressed" from="MarginContainer/VSplitContainer/OptionsPanel" to="." method="_on_OptionsPanel_id_pressed"]
