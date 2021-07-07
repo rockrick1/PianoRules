@@ -22,6 +22,7 @@ func _add_config_options():
 	add_separator("", 10)
 	add_item("Note range", 11)
 	add_check_item("Any octave", 12)
+	set_item_tooltip(get_item_index(12), "Play the displayed note in any octave")
 	add_separator("", 50)
 	add_item("Quit", 100)
 
