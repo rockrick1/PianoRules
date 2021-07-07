@@ -3,6 +3,7 @@
 [ext_resource path="res://UI/NoteRange.gd" type="Script" id=1]
 
 [node name="Control" type="AcceptDialog"]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -30,60 +31,63 @@ __meta__ = {
 }
 
 [node name="Start" type="VBoxContainer" parent="Buttons"]
-margin_left = 84.0
-margin_right = 103.0
-margin_bottom = 143.0
+margin_right = 95.0
+margin_bottom = 99.0
+size_flags_horizontal = 3
 alignment = 1
 
 [node name="Up" type="Button" parent="Buttons/Start"]
-margin_top = 40.0
-margin_right = 19.0
-margin_bottom = 60.0
+margin_top = 18.0
+margin_right = 95.0
+margin_bottom = 38.0
 text = "^"
 
 [node name="Label" type="Label" parent="Buttons/Start"]
-margin_top = 64.0
-margin_right = 19.0
-margin_bottom = 78.0
+margin_top = 42.0
+margin_right = 95.0
+margin_bottom = 56.0
 size_flags_vertical = 1
 text = "35"
+align = 1
 
 [node name="Down" type="Button" parent="Buttons/Start"]
-margin_top = 82.0
-margin_right = 19.0
-margin_bottom = 102.0
+margin_top = 60.0
+margin_right = 95.0
+margin_bottom = 80.0
 text = "v"
 
 [node name="MarginContainer" type="MarginContainer" parent="Buttons"]
-margin_left = 107.0
-margin_right = 147.0
-margin_bottom = 143.0
+margin_left = 99.0
+margin_right = 139.0
+margin_bottom = 99.0
 custom_constants/margin_right = 20
 custom_constants/margin_left = 20
 
 [node name="End" type="VBoxContainer" parent="Buttons"]
-margin_left = 151.0
-margin_right = 170.0
-margin_bottom = 143.0
+margin_left = 143.0
+margin_right = 238.0
+margin_bottom = 99.0
+size_flags_horizontal = 3
 alignment = 1
 
 [node name="Up" type="Button" parent="Buttons/End"]
-margin_top = 40.0
-margin_right = 19.0
-margin_bottom = 60.0
+margin_top = 18.0
+margin_right = 95.0
+margin_bottom = 38.0
 text = "^"
 
 [node name="Label" type="Label" parent="Buttons/End"]
-margin_top = 64.0
-margin_right = 19.0
-margin_bottom = 78.0
+margin_top = 42.0
+margin_right = 95.0
+margin_bottom = 56.0
 size_flags_vertical = 1
 text = "35"
+align = 1
 
 [node name="Down" type="Button" parent="Buttons/End"]
-margin_top = 82.0
-margin_right = 19.0
-margin_bottom = 102.0
+margin_top = 60.0
+margin_right = 95.0
+margin_bottom = 80.0
 text = "v"
 
 [connection signal="pressed" from="Buttons/Start/Up" to="." method="_on_Start_Up_pressed"]
