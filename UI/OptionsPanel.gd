@@ -4,9 +4,15 @@ var EC : Node # ExerciseController
 
 var note_range_scene = preload("res://UI/NoteRange.tscn")
 
+var is_mouse_inside : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_add_config_options()
+
+func _input(event):
+	if Input.is_action_pressed("left_mouse") and not is_mouse_inside:
+		hide()
 
 ################################################################################
 
@@ -51,3 +57,11 @@ func _on_OptionsPanel_id_pressed(id):
 			set_item_checked(idx, EC.any_octave)
 		100:
 			get_tree().quit()
+
+
+func _on_OptionsPanel_mouse_entered():
+	is_mouse_inside = true
+
+
+func _on_OptionsPanel_mouse_exited():
+	is_mouse_inside = false
