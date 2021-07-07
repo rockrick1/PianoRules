@@ -15,6 +15,7 @@ var note_range_open : bool = false
 var assist_mode : bool = false
 var hard_assist_mode : bool = false
 var pitch_range = [60,90]
+var any_octave : bool = false
 
 var tone_offset : float
 
@@ -51,8 +52,10 @@ func _process(_delta):
 	# process note hits from input
 	for note in NoteGroup.get_children():
 		for pitch in get_just_pressed_keys():
+			var note_str = NoteMapping.get_map()[note.pitch]
+			var input_note_str = NoteMapping.get_map()[pitch]
 			# hit!
-			if note.pitch == pitch:
+			if note.pitch == pitch or (any_octave && note_str.substr(1) == input_note_str.substr(1)):
 				print("you got it bro!")
 				current_ex.next_step()
 			# wrong note pressed :(

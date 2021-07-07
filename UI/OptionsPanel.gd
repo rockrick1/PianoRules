@@ -15,6 +15,8 @@ func _add_config_options():
 	add_radio_check_item("Hard assist mode", 2)
 	add_separator("", 10)
 	add_item("Note range", 11)
+	add_check_item("Any octave", 12)
+	add_separator("", 50)
 	add_item("Quit", 100)
 
 func _on_OptionsPanel_id_pressed(id):
@@ -44,5 +46,8 @@ func _on_OptionsPanel_id_pressed(id):
 			EC.add_child(note_range)
 			note_range.visible = true
 			EC.note_range_open = true
+		12:
+			EC.any_octave = not EC.any_octave
+			set_item_checked(idx, EC.any_octave)
 		100:
 			get_tree().quit()
