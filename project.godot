@@ -18,6 +18,11 @@ config/name="PianoRules"
 run/main_scene="res://Screens/Exercises.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
