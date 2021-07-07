@@ -17,6 +17,8 @@ var hard_assist_mode : bool = false
 var pitch_range = [60,90]
 var any_octave : bool = false
 
+var combo : int = 0
+
 var tone_offset : float
 
 var current_ex
@@ -57,10 +59,12 @@ func _process(_delta):
 			# hit!
 			if note.pitch == pitch or (any_octave && note_str.substr(1) == input_note_str.substr(1)):
 				print("you got it bro!")
+				_set_combo(combo + 1)
 				current_ex.next_step()
 			# wrong note pressed :(
 			else:
 				print("man, u suck...")
+				_set_combo(0)
 				break
 	InputReader.just_pressed.clear()
 	InputReader.just_released.clear()
@@ -126,6 +130,10 @@ func _on_NextStep_pressed():
 func _on_Configs_pressed():
 	OptionsPanel.visible = not OptionsPanel.visible
 #	$OptionsPanel.popup()
+
+func _set_combo(combo):
+	self.combo = combo
+	$MarginContainer/VSplitContainer/Combo.set_text("Combo: "+str(combo))
 
 ################################################################################
 # Options panel functions #
