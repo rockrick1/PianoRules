@@ -1,11 +1,11 @@
 extends "res://Exercises/Exercise.gd"
 
-const pitch_range = [36,96] # change this to dynamic later
-
 var last_note : int = -1
+var pitch_range : Array
 
 func _init(controller):
 	ExerciseController = controller
+	pitch_range = ExerciseController.pitch_range
 	next_step()
 
 ################################################################################

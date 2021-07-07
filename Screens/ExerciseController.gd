@@ -12,6 +12,7 @@ onready var HardAssist : Node
 
 var assist_mode : bool = false
 var hard_assist_mode : bool = false
+var pitch_range = [36,96]
 
 var tone_offset : float
 

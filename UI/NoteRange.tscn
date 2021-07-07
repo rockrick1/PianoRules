@@ -1,7 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/NoteRange.gd" type="Script" id=1]
 
 [node name="Control" type="AcceptDialog"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -11,11 +12,12 @@ margin_top = -72.0
 margin_right = 127.0
 margin_bottom = 71.0
 window_title = ""
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="Buttons" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -23,59 +25,64 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="VBoxContainer" parent="HBoxContainer2"]
+[node name="Start" type="VBoxContainer" parent="Buttons"]
 margin_left = 84.0
 margin_right = 103.0
 margin_bottom = 143.0
 alignment = 1
 
-[node name="Up" type="Button" parent="HBoxContainer2/Start"]
+[node name="Up" type="Button" parent="Buttons/Start"]
 margin_top = 40.0
 margin_right = 19.0
 margin_bottom = 60.0
 text = "^"
 
-[node name="Label" type="Label" parent="HBoxContainer2/Start"]
+[node name="Label" type="Label" parent="Buttons/Start"]
 margin_top = 64.0
 margin_right = 19.0
 margin_bottom = 78.0
 size_flags_vertical = 1
 text = "35"
 
-[node name="Down" type="Button" parent="HBoxContainer2/Start"]
+[node name="Down" type="Button" parent="Buttons/Start"]
 margin_top = 82.0
 margin_right = 19.0
 margin_bottom = 102.0
 text = "v"
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="Buttons"]
 margin_left = 107.0
 margin_right = 147.0
 margin_bottom = 143.0
 custom_constants/margin_right = 20
 custom_constants/margin_left = 20
 
-[node name="End" type="VBoxContainer" parent="HBoxContainer2"]
+[node name="End" type="VBoxContainer" parent="Buttons"]
 margin_left = 151.0
 margin_right = 170.0
 margin_bottom = 143.0
 alignment = 1
 
-[node name="Up" type="Button" parent="HBoxContainer2/End"]
+[node name="Up" type="Button" parent="Buttons/End"]
 margin_top = 40.0
 margin_right = 19.0
 margin_bottom = 60.0
 text = "^"
 
-[node name="Label" type="Label" parent="HBoxContainer2/End"]
+[node name="Label" type="Label" parent="Buttons/End"]
 margin_top = 64.0
 margin_right = 19.0
 margin_bottom = 78.0
 size_flags_vertical = 1
 text = "35"
 
-[node name="Down" type="Button" parent="HBoxContainer2/End"]
+[node name="Down" type="Button" parent="Buttons/End"]
 margin_top = 82.0
 margin_right = 19.0
 margin_bottom = 102.0
 text = "v"
+
+[connection signal="pressed" from="Buttons/Start/Up" to="." method="_on_Start_Up_pressed"]
+[connection signal="pressed" from="Buttons/Start/Down" to="." method="_on_Start_Down_pressed"]
+[connection signal="pressed" from="Buttons/End/Up" to="." method="_on_End_Up_pressed"]
+[connection signal="pressed" from="Buttons/End/Down" to="." method="_on_End_Down_pressed"]
