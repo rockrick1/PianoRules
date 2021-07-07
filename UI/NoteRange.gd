@@ -41,3 +41,8 @@ func _on_End_Down_pressed():
 	pitch_range[1] = pitch_range[1] - 1
 	var end = NoteMapping.get_map()[pitch_range[1]]
 	end_label.set_text(end)
+
+
+func _on_Control_confirmed():
+	ExerciseController.note_range_open = false
+	queue_free()

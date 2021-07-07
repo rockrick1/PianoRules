@@ -10,6 +10,8 @@ onready var OptionsPanel : Node
 onready var Assist : Node
 onready var HardAssist : Node
 
+var note_range_open : bool = false
+
 var assist_mode : bool = false
 var hard_assist_mode : bool = false
 var pitch_range = [60,90]
