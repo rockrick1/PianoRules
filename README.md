@@ -3,4 +3,4 @@ A piano practicing software with MIDI and keyboard support, for those who are st
 
 The development log can be found here: https://trello.com/b/sQQYH800/pianorules
 
-Being developed by me, inspired by the MusicTheory site
+Being developed by me, inspired by musictheory.net
