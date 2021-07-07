@@ -6,11 +6,13 @@ var ExerciseController : Node
 var start_label : Control
 var end_label : Control
 
-func _init(controller):
+func init(controller):
 	ExerciseController = controller
 	pitch_range = ExerciseController.pitch_range
 	start_label = $Buttons/Start/Label
 	end_label = $Buttons/End/Label
+	start_label.set_text(str(pitch_range[0]))
+	end_label.set_text(str(pitch_range[1]))
 
 
 func _on_Start_Up_pressed():

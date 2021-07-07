@@ -2,7 +2,7 @@ extends PopupMenu
 
 var EC : Node # ExerciseController
 
-onready var note_range_scene = preload("res://UI/NoteRange.tscn")
+var note_range_scene = preload("res://UI/NoteRange.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,7 +37,8 @@ func _on_OptionsPanel_id_pressed(id):
 			set_item_checked(idx, EC.hard_assist_mode)
 			set_item_checked(assist_idx, EC.assist_mode)
 		11:
-			var note_range = note_range_scene.instance(EC)
+			var note_range = note_range_scene.instance()
+			note_range.init(EC)
 			EC.add_child(note_range)
 			note_range.visible = true
 		100:
