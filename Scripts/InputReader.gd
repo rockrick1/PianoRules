@@ -42,8 +42,6 @@ const OCTAVE_KEY_INDEX = ["WhiteKey1", "BlackKey1", "WhiteKey2", "BlackKey2", "W
 
 
 func _unhandled_input(event : InputEvent):
-	just_pressed.clear()
-	just_released.clear()
 	if (event is InputEventMIDI):
 
 		var event_dump : String = ""
@@ -77,4 +75,3 @@ func _unhandled_input(event : InputEvent):
 			MIDI_MESSAGE_NOTE_OFF:
 				currently_pressed.erase(props.pitch)
 				just_released[props.pitch] = props
-				pass

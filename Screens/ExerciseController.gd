@@ -12,7 +12,7 @@ onready var HardAssist : Node
 
 var assist_mode : bool = false
 var hard_assist_mode : bool = false
-var pitch_range = [36,96]
+var pitch_range = [60,90]
 
 var tone_offset : float
 
@@ -57,6 +57,8 @@ func _process(_delta):
 			else:
 				print("man, u suck...")
 				break
+	InputReader.just_pressed.clear()
+	InputReader.just_released.clear()
 
 func load_exercise(ex_name):
 	print(">>>loading exercise: " + ex_name)
