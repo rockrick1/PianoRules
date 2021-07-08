@@ -24,7 +24,8 @@ func _add_config_options():
 	add_separator("", 20)
 	add_check_item("Any octave", 21)
 	set_item_tooltip(get_item_index(21), "Play the displayed note in any octave")
-	add_separator("", 50)
+	add_separator("", 30)
+	add_item("Refresh MIDI inputs", 50)
 	add_item("Quit", 100)
 
 func _on_OptionsPanel_id_pressed(id):
@@ -57,6 +58,9 @@ func _on_OptionsPanel_id_pressed(id):
 		21:
 			EC.any_octave = not EC.any_octave
 			set_item_checked(idx, EC.any_octave)
+		50:
+			OS.open_midi_inputs()
+			hide()
 		100:
 			get_tree().quit()
 

@@ -31,20 +31,20 @@ func _ready():
 	InputReader = $InputReader
 	
 	# parent node for all the notes on screen
-	NoteGroup = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Notes
+	NoteGroup = $MarginContainer/MarginContainer/TextureRect/Notes
 	
 	# options panel, with many settings
-	OptionsPanel = $MarginContainer/VSplitContainer/OptionsPanel
+	OptionsPanel = $MarginContainer/Buttons/OptionsPanel
 	
 	# Assist nodes
-	Assist = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Assist
-	HardAssist = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/HardAssist
+	Assist = $MarginContainer/MarginContainer/TextureRect/Assist
+	HardAssist = $MarginContainer/MarginContainer/TextureRect/HardAssist
 	Assist.visible = false
 	HardAssist.visible = false
 	
-	$MarginContainer/VSplitContainer/OptionsPanel.EC = self
+	$MarginContainer/Buttons/OptionsPanel.EC = self
 	
-	tone_offset = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Anchor77.position.y - $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Anchor60.position.y
+	tone_offset = $MarginContainer/MarginContainer/TextureRect/Anchor77.position.y - $MarginContainer/MarginContainer/TextureRect/Anchor60.position.y
 	tone_offset /= 10
 	
 	print(tone_offset)
@@ -81,7 +81,7 @@ func get_note_position_by_name(note_str) -> Vector2:
 	var note_offset = NoteMapping.get_offsets()[note]
 	var octave_offset = tone_offset * 7
 	var dist = (note_offset * tone_offset) + ((octave - 6) * octave_offset)
-	var pos = $MarginContainer/VSplitContainer/MarginContainer/TextureRect/Anchor60.position + Vector2(((note_offset + octave) % 2) * -50, dist)
+	var pos = $MarginContainer/MarginContainer/TextureRect/Anchor60.position + Vector2(((note_offset + octave) % 2) * -50, dist)
 	return pos
 
 func add_note(pitch):
@@ -96,7 +96,7 @@ func add_note(pitch):
 		note.sharp()
 	elif "b" in full_note:
 		note.flat()
-	$MarginContainer/VSplitContainer/MarginContainer/TextureRect/Notes.add_child(note)
+	$MarginContainer/MarginContainer/TextureRect/Notes.add_child(note)
 	print("add note in pitch "+str(pitch))
 
 # murders all notes on screen
@@ -133,7 +133,7 @@ func _on_Configs_pressed():
 
 func _set_combo(combo):
 	self.combo = combo
-	$MarginContainer/VSplitContainer/Combo.set_text("Combo: "+str(combo))
+	$MarginContainer/Buttons/Combo.set_text("Combo: "+str(combo))
 
 ################################################################################
 # Options panel functions #
