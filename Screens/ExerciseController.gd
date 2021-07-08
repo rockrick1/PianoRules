@@ -59,11 +59,13 @@ func _process(_delta):
 			# hit!
 			if note.pitch == pitch or (any_octave && note_str.substr(1) == input_note_str.substr(1)):
 				print("you got it bro!")
+				note.hit()
 				_set_combo(combo + 1)
 				current_ex.next_step()
 			# wrong note pressed :(
 			else:
 				print("man, u suck...")
+				note.miss()
 				_set_combo(0)
 				break
 	InputReader.just_pressed.clear()

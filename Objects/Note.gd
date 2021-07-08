@@ -11,10 +11,25 @@ var accidental : int = 0
 var pitch : int
 var note_str : String
 
+export (float) var offset
+
 
 func _ready():
-	pass
+	var mat = $NoteSprite.get_material()
+	mat.set_shader_param("strength", 0.0)
 
+func _process(delta):
+	$NoteSprite.offset.x = offset
+	$FlatSprite.offset.x = offset
+	$SharpSprite.offset.x = offset
+
+func miss():
+	$AnimationPlayer.stop()
+	$AnimationPlayer.play("miss")
+
+func hit():
+	$AnimationPlayer.stop()
+	$AnimationPlayer.play("hit")
 
 func sharp():
 	accidental = accidentals["sharp"]

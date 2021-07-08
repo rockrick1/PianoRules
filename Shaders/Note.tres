@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform vec4 u_color_key : hint_color;
+uniform vec4 u_replacement_color : hint_color;
+uniform float strength : float;
+
+void fragment() {
+    vec4 col = texture(TEXTURE, UV);
+    vec4 d4 = abs(col - u_color_key);
+    float d = max(max(d4.r, d4.g), d4.b);
+    if(d < 0.01 && col.a > 0.0) {
+        col.r = u_replacement_color.r * strength;
+		col.g = u_replacement_color.g * strength;
+		col.b = u_replacement_color.b * strength;
+    }
+    COLOR = col;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/u_color_key = Color( 0, 0, 0, 1 )
+shader_param/u_replacement_color = Color( 1, 0.00784314, 0.00784314, 1 )
+shader_param/strength = 1.0
