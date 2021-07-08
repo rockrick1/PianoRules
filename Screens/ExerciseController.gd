@@ -104,7 +104,7 @@ func add_note(pitch):
 # murders all notes on screen
 func kill_all_notes():
 	for note in NoteGroup.get_children():
-		note.queue_free()
+		note.die()
 
 func get_pressed_keys():
 	return InputReader.currently_pressed.keys()

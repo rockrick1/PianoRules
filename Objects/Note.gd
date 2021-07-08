@@ -28,7 +28,6 @@ func miss():
 	$AnimationPlayer.play("miss")
 
 func hit():
-	$AnimationPlayer.stop()
 	$AnimationPlayer.play("hit")
 
 func sharp():
@@ -46,6 +45,8 @@ func regular():
 	$FlatSprite.set_visible(false)
 	$SharpSprite.set_visible(false)
 
+func die():
+	queue_free()
 
 func get_accidentals():
 	return accidentals
