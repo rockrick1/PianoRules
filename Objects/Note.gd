@@ -12,7 +12,7 @@ var pitch : int
 var note_str : String
 var alive : bool = true
 
-export (float) var offset
+export (float) var shake_offset
 
 
 func _ready():
@@ -20,9 +20,9 @@ func _ready():
 	mat.set_shader_param("strength", 0.0)
 
 func _process(delta):
-	$NoteSprite.offset.x = offset
-	$FlatSprite.offset.x = offset
-	$SharpSprite.offset.x = offset
+	$NoteSprite.offset.x = shake_offset
+	$FlatSprite.offset.x = shake_offset
+	$SharpSprite.offset.x = shake_offset
 
 func miss():
 	$AnimationPlayer.stop()
@@ -50,11 +50,11 @@ func regular():
 	$FlatSprite.set_visible(false)
 	$SharpSprite.set_visible(false)
 
+func get_accidentals():
+	return accidentals
+
 func _on_DeathDelay_timeout():
 	die()
 
 func die():
 	queue_free()
-
-func get_accidentals():
-	return accidentals

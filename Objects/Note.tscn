@@ -63,7 +63,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 0.00784314, 0.00784314, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:offset")
+tracks/2/path = NodePath(".:shake_offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
