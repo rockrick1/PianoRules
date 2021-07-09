@@ -14,7 +14,7 @@ var note_range_open : bool = false
 
 var assist_mode : bool = false
 var hard_assist_mode : bool = false
-var pitch_range = [60,90]
+var pitch_range = [60,87]
 var any_octave : bool = false
 
 var combo : int = 0
@@ -53,6 +53,9 @@ func _ready():
 func _process(_delta):
 	# process note hits from input
 	for note in NoteGroup.get_children():
+		# doesn't consider notes that are on screen but have already been played
+		if not note.alive:
+			continue
 		for pitch in get_just_pressed_keys():
 			var note_str = NoteMapping.get_map()[note.pitch]
 			var input_note_str = NoteMapping.get_map()[pitch]
@@ -126,6 +129,7 @@ func is_key_just_released(pitch):
 
 
 func _on_NextStep_pressed():
+	kill_all_notes()
 	current_ex.next_step()
 
 

@@ -10,6 +10,7 @@ var type : String = "semibreve"
 var accidental : int = 0
 var pitch : int
 var note_str : String
+var alive : bool = true
 
 export (float) var offset
 
@@ -28,6 +29,10 @@ func miss():
 	$AnimationPlayer.play("miss")
 
 func hit():
+	alive = false
+	if $AnimationPlayer.get_current_animation() == "miss":
+		$AnimationPlayer.stop()
+	$DeathDelay.start()
 	$AnimationPlayer.play("hit")
 
 func sharp():
@@ -44,6 +49,9 @@ func regular():
 	accidental = accidentals["regular"]
 	$FlatSprite.set_visible(false)
 	$SharpSprite.set_visible(false)
+
+func _on_DeathDelay_timeout():
+	die()
 
 func die():
 	queue_free()
