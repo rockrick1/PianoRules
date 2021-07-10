@@ -19,12 +19,20 @@ func _input(event):
 func _add_config_options():
 	add_radio_check_item("Assist mode", 1)
 	add_radio_check_item("Hard assist mode", 2)
+	
 	add_separator("", 10)
+	
 	add_item("Note range", 11)
+	add_check_item("Accidentals", 12)
+	set_item_checked(get_item_index(12), true)
+	
 	add_separator("", 20)
+	
 	add_check_item("Any octave", 21)
 	set_item_tooltip(get_item_index(21), "Play the displayed note in any octave")
+	
 	add_separator("", 30)
+	
 	add_item("Refresh MIDI inputs", 50)
 	add_item("Quit", 100)
 
@@ -55,6 +63,9 @@ func _on_OptionsPanel_id_pressed(id):
 			EC.add_child(note_range)
 			note_range.visible = true
 			EC.note_range_open = true
+		12:
+			EC.accidentals = not EC.accidentals
+			set_item_checked(idx, EC.accidentals)
 		21:
 			EC.any_octave = not EC.any_octave
 			set_item_checked(idx, EC.any_octave)

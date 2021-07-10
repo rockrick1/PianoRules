@@ -16,6 +16,7 @@ var assist_mode : bool = false
 var hard_assist_mode : bool = false
 var pitch_range = [60,87]
 var any_octave : bool = false
+var accidentals : bool = true
 
 var combo : int = 0
 
