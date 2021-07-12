@@ -522,8 +522,8 @@ margin_bottom = 19.0
 alignment = 1
 
 [node name="Combo" type="Label" parent="MarginContainer/Buttons/Combos"]
-margin_left = 447.0
-margin_right = 516.0
+margin_left = 436.0
+margin_right = 505.0
 margin_bottom = 19.0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.98
@@ -536,13 +536,13 @@ __meta__ = {
 }
 
 [node name="MaxCombo" type="Label" parent="MarginContainer/Buttons/Combos"]
-margin_left = 520.0
-margin_right = 567.0
+margin_left = 509.0
+margin_right = 578.0
 margin_bottom = 19.0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.98
 custom_fonts/font = ExtResource( 6 )
-text = "Max: 0"
+text = "Combo: 0"
 align = 1
 valign = 1
 __meta__ = {
@@ -571,9 +571,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionsPanel" parent="MarginContainer/Buttons" instance=ExtResource( 5 )]
-margin_top = 104.0
-margin_bottom = 124.0
+[node name="OptionsPanel" parent="MarginContainer/Buttons/Configs" instance=ExtResource( 5 )]
+margin_top = 29.0
+margin_bottom = 49.0
 
 [connection signal="pressed" from="MarginContainer/Buttons/NextStep" to="." method="_on_NextStep_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/Configs" to="." method="_on_Configs_pressed"]

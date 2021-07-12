@@ -36,7 +36,8 @@ func _ready():
 	NoteGroup = $MarginContainer/MarginContainer/TextureRect/Notes
 	
 	# options panel, with many settings
-	OptionsPanel = $MarginContainer/Buttons/OptionsPanel
+	OptionsPanel = $MarginContainer/Buttons/Configs/OptionsPanel
+	OptionsPanel.EC = self
 	
 	# Assist nodes
 	Assist = $MarginContainer/MarginContainer/TextureRect/Assist
@@ -44,7 +45,6 @@ func _ready():
 	Assist.visible = false
 	HardAssist.visible = false
 	
-	$MarginContainer/Buttons/OptionsPanel.EC = self
 	
 	tone_offset = $MarginContainer/MarginContainer/TextureRect/Anchor77.position.y - $MarginContainer/MarginContainer/TextureRect/Anchor60.position.y
 	tone_offset /= 10
