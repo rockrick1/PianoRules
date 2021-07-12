@@ -510,29 +510,21 @@ position = Vector2( 503.703, 312.501 )
 margin_left = 5.0
 margin_top = 20.0
 margin_right = 1019.0
-margin_bottom = 120.0
+margin_bottom = 97.0
 size_flags_vertical = 0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Label" type="Label" parent="MarginContainer/Buttons"]
+[node name="Combos" type="HBoxContainer" parent="MarginContainer/Buttons"]
 margin_right = 1014.0
 margin_bottom = 19.0
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.98
-custom_fonts/font = ExtResource( 6 )
-text = "Play some notes!"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+alignment = 1
 
-[node name="Combo" type="Label" parent="MarginContainer/Buttons"]
-margin_top = 23.0
-margin_right = 1014.0
-margin_bottom = 42.0
+[node name="Combo" type="Label" parent="MarginContainer/Buttons/Combos"]
+margin_left = 447.0
+margin_right = 516.0
+margin_bottom = 19.0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.98
 custom_fonts/font = ExtResource( 6 )
@@ -543,19 +535,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MaxCombo" type="Label" parent="MarginContainer/Buttons/Combos"]
+margin_left = 520.0
+margin_right = 567.0
+margin_bottom = 19.0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.98
+custom_fonts/font = ExtResource( 6 )
+text = "Max: 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="NextStep" type="Button" parent="MarginContainer/Buttons"]
-margin_top = 46.0
+margin_top = 23.0
 margin_right = 148.0
-margin_bottom = 71.0
+margin_bottom = 48.0
 size_flags_horizontal = 0
 size_flags_vertical = 2
 custom_fonts/font = ExtResource( 6 )
 text = "Next exercise step"
 
 [node name="Configs" type="Button" parent="MarginContainer/Buttons"]
-margin_top = 75.0
+margin_top = 52.0
 margin_right = 68.0
-margin_bottom = 100.0
+margin_bottom = 77.0
 size_flags_horizontal = 0
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.35

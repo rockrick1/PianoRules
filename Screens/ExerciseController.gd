@@ -19,6 +19,7 @@ var any_octave : bool = false
 var accidentals : bool = true
 
 var combo : int = 0
+var max_combo : int = 0
 
 var tone_offset : float
 
@@ -140,7 +141,6 @@ func _on_Configs_pressed():
 
 func _set_combo(combo):
 	self.combo = combo
-	$MarginContainer/Buttons/Combo.set_text("Combo: "+str(combo))
-
-################################################################################
-# Options panel functions #
+	max_combo = max(max_combo, combo)
+	$MarginContainer/Buttons/Combos/Combo.set_text("Combo: "+str(combo))
+	$MarginContainer/Buttons/Combos/MaxCombo.set_text("Max: "+str(max_combo))
