@@ -56,24 +56,23 @@ func _process(_delta):
 	# process note hits from input
 	for note in NoteGroup.get_children():
 		# doesn't consider notes that are on screen but have already been played
-		if not note.alive:
+		# only considers one not, for now
+		if (not note.alive) or len(get_just_pressed_keys()) == 0:
 			continue
-		for pitch in get_just_pressed_keys():
-			var note_str = NoteMapping.get_map()[note.pitch]
-			var input_note_str = NoteMapping.get_map()[pitch]
-			# hit!
-			if note.pitch == pitch or (any_octave && note_str.substr(1) == input_note_str.substr(1)):
-				print("you got it bro!")
-				note.hit()
-				_set_combo(combo + 1)
-				current_ex.next_step()
-				break
-			# wrong note pressed :(
-			else:
-				print("man, u suck...")
-				note.miss()
-				_set_combo(0)
-				break
+		var pitch = get_just_pressed_keys()[0]
+		var note_str = NoteMapping.get_map()[note.pitch]
+		var input_note_str = NoteMapping.get_map()[pitch]
+		# hit!
+		if true:#note.pitch == pitch or (any_octave && note_str.substr(1) == input_note_str.substr(1)):
+			print("you got it bro!")
+			note.hit()
+			_set_combo(combo + 1)
+			current_ex.next_step()
+		# wrong note pressed :(
+		else:
+			print("man, u suck...")
+			note.miss()
+			_set_combo(0)
 	InputReader.just_pressed.clear()
 	InputReader.just_released.clear()
 
