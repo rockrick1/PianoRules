@@ -63,7 +63,7 @@ func _process(_delta):
 		var note_str = NoteMapping.get_map()[note.pitch]
 		var input_note_str = NoteMapping.get_map()[pitch]
 		# hit!
-		if true:#note.pitch == pitch or (any_octave && note_str.substr(1) == input_note_str.substr(1)):
+		if note.pitch == pitch or (any_octave && note_str.substr(1) == input_note_str.substr(1)):
 			print("you got it bro!")
 			note.hit()
 			_set_combo(combo + 1)
