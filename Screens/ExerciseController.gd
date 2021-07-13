@@ -67,6 +67,7 @@ func _process(_delta):
 				note.hit()
 				_set_combo(combo + 1)
 				current_ex.next_step()
+				break
 			# wrong note pressed :(
 			else:
 				print("man, u suck...")

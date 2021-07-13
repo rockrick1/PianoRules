@@ -64,7 +64,6 @@ __meta__ = {
 }
 
 [node name="Assist" type="Control" parent="MarginContainer/MarginContainer/TextureRect"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -175,6 +174,30 @@ text = "F"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Line2D" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
+points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
+width = 2.0
+
+[node name="Line2D2" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
+position = Vector2( 0, 40 )
+points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
+width = 2.0
+
+[node name="Line2D3" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
+position = Vector2( 0, -30 )
+points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
+width = 2.0
+
+[node name="Line2D4" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
+position = Vector2( 0, -70 )
+points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
+width = 2.0
+
+[node name="Line2D5" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
+position = Vector2( 0, -100 )
+points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
+width = 2.0
 
 [node name="HardAssist" type="Control" parent="MarginContainer/MarginContainer/TextureRect"]
 visible = false
