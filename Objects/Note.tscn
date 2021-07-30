@@ -9,7 +9,7 @@
 [sub_resource type="Animation" id=1]
 resource_name = "hit"
 length = 0.5
-step = 0.01
+step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("NoteSprite:material:shader_param/strength")
 tracks/0/interp = 1
@@ -33,6 +33,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 0.223529, 0.47451, 0.945098, 1 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -98,9 +112,3 @@ texture = ExtResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/hit = SubResource( 1 )
 anims/miss = SubResource( 2 )
-
-[node name="DeathDelay" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
-[connection signal="timeout" from="DeathDelay" to="." method="_on_DeathDelay_timeout"]

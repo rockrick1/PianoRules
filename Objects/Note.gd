@@ -29,10 +29,10 @@ func miss():
 	$AnimationPlayer.play("miss")
 
 func hit():
+	if not alive:
+		return
 	alive = false
-	if $AnimationPlayer.get_current_animation() == "miss":
-		$AnimationPlayer.stop()
-	$DeathDelay.start()
+	$AnimationPlayer.stop()
 	$AnimationPlayer.play("hit")
 
 func sharp():
@@ -52,9 +52,6 @@ func regular():
 
 func get_accidentals():
 	return accidentals
-
-func _on_DeathDelay_timeout():
-	die()
 
 func die():
 	queue_free()
