@@ -9,6 +9,7 @@ onready var NoteGroup : Node
 onready var OptionsPanel : Node
 onready var Assist : Node
 onready var HardAssist : Node
+onready var Complements : Node
 
 var note_range_open : bool = false
 
@@ -42,8 +43,11 @@ func _ready():
 	# Assist nodes
 	Assist = $MarginContainer/MarginContainer/TextureRect/Assist
 	HardAssist = $MarginContainer/MarginContainer/TextureRect/HardAssist
+	Complements = $MarginContainer/MarginContainer/TextureRect/Complements
 	Assist.visible = false
 	HardAssist.visible = false
+	Complements.get_node("TopLine").hide()
+	Complements.get_node("BotLine").hide()
 	
 	
 	tone_offset = $MarginContainer/MarginContainer/TextureRect/Anchor77.position.y - $MarginContainer/MarginContainer/TextureRect/Anchor60.position.y

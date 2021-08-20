@@ -175,30 +175,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2D" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
-points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
-width = 2.0
-
-[node name="Line2D2" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
-position = Vector2( 0, 40 )
-points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
-width = 2.0
-
-[node name="Line2D3" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
-position = Vector2( 0, -30 )
-points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
-width = 2.0
-
-[node name="Line2D4" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
-position = Vector2( 0, -70 )
-points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
-width = 2.0
-
-[node name="Line2D5" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Assist"]
-position = Vector2( 0, -100 )
-points = PoolVector2Array( 228.453, 172.5, 539.742, 172.484 )
-width = 2.0
-
 [node name="HardAssist" type="Control" parent="MarginContainer/MarginContainer/TextureRect"]
 visible = false
 margin_right = 40.0
@@ -517,6 +493,22 @@ text = "F"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Complements" type="Control" parent="MarginContainer/MarginContainer/TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopLine" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Complements"]
+points = PoolVector2Array( 0, 0, 100, 0 )
+width = 2.0
+
+[node name="BotLine" type="Line2D" parent="MarginContainer/MarginContainer/TextureRect/Complements"]
+points = PoolVector2Array( 0, 0, 100, 0 )
+width = 2.0
+default_color = Color( 1, 0.219608, 0.309804, 1 )
 
 [node name="Anchor77" type="Node2D" parent="MarginContainer/MarginContainer/TextureRect"]
 position = Vector2( 503.703, 112.506 )
